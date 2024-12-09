@@ -1,0 +1,21 @@
+{% extends "../../auth/templates/base.html" %}
+{% block content %}
+    <h2> Каталог магазина одежды3 </h2>
+
+    {% for i in orders %}
+        {{ i }}
+        <div class="col-md-12 text-center">
+            <div class="card">
+
+                <div class="card-body">
+                    <h5 class="card-title">{{ i.product_type }}</h5>
+                    <p class="card-text">{{ i.appointment }} </p>
+                    <p class="card-text">{{ i.brand }} </p>
+
+                </div>
+            </div>
+        </div>
+
+
+    {% endfor %}
+{% endblock %}

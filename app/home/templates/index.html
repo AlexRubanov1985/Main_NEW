@@ -1,7 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
     <h2> Каталог магазина одежды </h2>
+
     <h5> В корзине товаров {{ korzina }} </h5>
+
+{#<a href="{{ url_for('categ.categories_page', id=i.id) }}" class="btn btn-primary">Каталог</a>#}
+    <div class="text-center mb-3">
+
+    </div>
+
     {% for i in tovars %}
         {% if i.ostatok!=0 %}
         <div class="col-md-12 text-center">
@@ -16,9 +23,8 @@
                 </div>
             </div>
         </div>
-
-
         <hr>{% endif %}
     {% endfor %}
 {% endblock %}
+
 

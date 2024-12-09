@@ -24,15 +24,19 @@
     {% endif %}
 {% endwith %}
 <div class="col-md-12 text-center">
-    <a class="btn btn-outline-primary" href="{{ url_for('index') }}">Каталог </a>
+    <a class="btn btn-outline-primary" href="{{ url_for('categ.categories_page') }}">Каталог </a>
+<a class="btn btn-outline-primary" href="{{ url_for('categ.categories') }}">Категории </a>
     {% if current_user.is_authenticated %}
         <a class="btn btn-outline-danger" href="{{ url_for('tovar_add') }}">Добавить товар</a>
-        <a class="btn btn-outline-danger" href="{{ url_for('user_data') }}">страница пользователя</a>
+        <a class="btn btn-outline-danger" href="{{ url_for('auth.user_data') }}">страница пользователя</a>
+
+
 {% endif %}
     {% if current_user.is_anonymous %}
-      <a class="btn btn-outline-primary" href="{{ url_for('login') }}">Войти</a>
+      <a class="btn btn-outline-primary" href="{{ url_for('auth.login') }}">Войти</a>
     {% else %}
-      <a class="btn btn-outline-danger" href="{{ url_for('logout') }}">Выйти</a>
+      <a class="btn btn-outline-danger" href="{{ url_for('auth.logout') }}">Выйти</a>
+
     {% endif %}
 
 </div>
